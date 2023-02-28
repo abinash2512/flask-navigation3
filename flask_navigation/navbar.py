@@ -1,10 +1,11 @@
 import collections
+import collections.abc as collections_abc
 
 from .item import ItemCollection
 from .signals import navbar_created
 
 
-class NavigationBar(collections.Iterable):
+class NavigationBar(collections_abc.Iterable):
     """The navigation bar object."""
 
     def __init__(self, name, items=None, alias=None):

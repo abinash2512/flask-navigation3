@@ -1,4 +1,5 @@
 import collections
+import collections.abc as collections_abc
 
 from flask import url_for, request, Markup
 
@@ -128,8 +129,8 @@ class Item(object):
         return ItemReference(self.endpoint, self.args)
 
 
-class ItemCollection(collections.MutableSequence,
-                     collections.Iterable):
+class ItemCollection(collections_abc.MutableSequence,
+                     collections_abc.Iterable):
     """The collection of navigation items.
 
     This collection is a mutable sequence. All items have order index, and
@@ -195,7 +196,7 @@ class ItemCollection(collections.MutableSequence,
         self._items_mapping[item.ident] = item
 
 
-class ItemReference(collections.namedtuple('ItemReference', 'endpoint args')):
+class ItemReference(collections_abc.namedtuple('ItemReference', 'endpoint args')):
     """The identity tuple of navigation item.
 
     :param endpoint: the endpoint of view function.
