@@ -196,7 +196,7 @@ class ItemCollection(collections_abc.MutableSequence,
         self._items_mapping[item.ident] = item
 
 
-class ItemReference(collections_abc.namedtuple('ItemReference', 'endpoint args')):
+class ItemReference(collections.namedtuple('ItemReference', 'endpoint args')):
     """The identity tuple of navigation item.
 
     :param endpoint: the endpoint of view function.
