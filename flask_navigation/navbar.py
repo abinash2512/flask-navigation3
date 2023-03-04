@@ -41,7 +41,7 @@ class NavigationBar(collections_abc.Iterable):
     def current_item(self):
         """Get the current active navigation Item if any.
 
-        .. versionadded:: 0.2.0
+        .. versionadded:: 0.2.1
         """
         return self._get_current_item(self)
 
